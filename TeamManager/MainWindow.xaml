@@ -1,0 +1,32 @@
+﻿<Window x:Class="TeamManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeamManager"
+        mc:Ignorable="d"
+        Title="Main Window" Height="450" Width="800" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" WindowState="Maximized" Closed="Window_Closed">
+
+    <DockPanel x:Name="pMainMenu" Grid.ColumnSpan="3">
+        <Menu x:Name="mMainMenu" DockPanel.Dock="Top">
+            <MenuItem Header="_Language">
+                <MenuItem Header="_English"/>
+                <MenuItem Header="_Hebrew"/>
+            </MenuItem>
+            <MenuItem x:Name="miAbout" Header="_?" Click="miAbout_Click"/>
+        </Menu>
+
+        <StackPanel VerticalAlignment="Center" AutomationProperties.Name="dpDataControls" Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+            <Button x:Name="bFirstRecord" Content="&lt;&lt; _First" HorizontalAlignment="Center" Margin="8,8,8,8" Width="60" Click="bFirstRecord_Click" IsEnabled="False"/>
+            <Button x:Name="bPriorRecord" Content="_&lt; Prior" HorizontalAlignment="Center" Margin="8,8,8,8" Width="60" Click="bPriorRecord_Click" IsEnabled="False"/>
+            <Button x:Name="bNewUserData" Content="_New..." HorizontalAlignment="Center" Margin="8,8,8,8" Width="60" Click="bNewUserData_Click"/>
+            <Button x:Name="bEditSelectedUserData" Content="_Edit..." HorizontalAlignment="Center" Margin="8,8,8,8" Width="60" IsEnabled="False" Click="bEditSelectedUserData_Click"/>
+            <Button x:Name="bDeleteSelectedUserData" Content="_Delete..." HorizontalAlignment="Center" Margin="8,8,8,8" Width="60" IsEnabled="False" Click="bDeleteSelectedUserData_Click"/>
+            <Button x:Name="bNextRecord" Content="Next _&gt;" HorizontalAlignment="Center" Margin="8,8,8,8" Width="60" Click="bNextRecord_Click" IsEnabled="False"/>
+            <Button x:Name="bLastRecord" Content="_Last &gt;&gt;" HorizontalAlignment="Center" Margin="8,8,8,8" Width="60" Click="bLastRecord_Click" IsEnabled="False"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgrMainData" HorizontalAlignment="Stretch" SelectionChanged="dgrMainData_SelectionChanged" AutoGenerateColumns="True"
+              ItemsSource="{Binding}" CanUserAddRows="False"/>
+    </DockPanel>
+</Window>

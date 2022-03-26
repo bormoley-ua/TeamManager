@@ -1,0 +1,54 @@
+﻿<Window x:Class="TeamManager.PersonViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeamManager"
+        mc:Ignorable="d"
+        Title="Person View Window" Height="450" Width="527" WindowStartupLocation="CenterOwner">
+    <Grid x:Uid="Grid_1" Background="#E1E0E5" Grid.IsSharedSizeScope="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Uid="ColumnDefinition_1" />
+            <ColumnDefinition x:Uid="ColumnDefinition_2"/>
+            <ColumnDefinition x:Uid="ColumnDefinition_3" SharedSizeGroup="Buttons" />
+            <ColumnDefinition x:Uid="ColumnDefinition_4" SharedSizeGroup="Buttons" />
+            <ColumnDefinition x:Uid="ColumnDefinition_5" SharedSizeGroup="Buttons" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" />
+            <RowDefinition x:Uid="RowDefinition_2" />
+            <RowDefinition x:Uid="RowDefinition_3" />
+            <RowDefinition x:Uid="RowDefinition_4" />
+            <RowDefinition x:Uid="RowDefinition_5" />
+            <RowDefinition x:Uid="RowDefinition_6" />
+            <RowDefinition x:Uid="RowDefinition_7" />
+            <RowDefinition x:Uid="RowDefinition_8" />
+            <RowDefinition x:Uid="RowDefinition_9" />
+            <RowDefinition x:Uid="RowDefinition_10" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right">Id:</TextBlock>
+        <TextBox x:Name="pId" TextWrapping="Wrap" Width="60" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4"  Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right">First Name:</TextBlock>
+        <TextBox x:Name="pFirstName" TextWrapping="Wrap" Width="330" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4"  Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right">Last Name:</TextBlock>
+        <TextBox x:Name="pSurname" TextWrapping="Wrap" Width="330" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4"  Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right">Age:</TextBlock>
+        <TextBox TextWrapping="Wrap" Width="330" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4"  Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right">gender:</TextBlock>
+        <TextBox TextWrapping="Wrap" Width="330" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4"  Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right">LinkedIn:</TextBlock>
+        <TextBox x:Name="pLinkedIn" TextWrapping="Wrap" Width="330" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4"  Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right">Phone:</TextBlock>
+        <TextBox x:Name="pPhone" TextWrapping="Wrap" Width="330" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4"  Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="7" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right">e-mail:</TextBlock>
+        <TextBox x:Name="pEmail" TextWrapping="Wrap" Width="330" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4"  Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="8" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right">Notes:</TextBlock>
+        <TextBox x:Name="pNotes" TextWrapping="Wrap" Width="330" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="4"  Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <Button Content="Update" Grid.Row="9" Grid.Column="2" Margin="10,10,10,10" Padding="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Delete" Grid.Row="9" Grid.Column="3" Margin="10,10,10,10" Padding="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Close" Grid.Row="9" Grid.Column="4" Margin="10,10,10,10"  Padding="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+
+    </Grid>
+</Window>
