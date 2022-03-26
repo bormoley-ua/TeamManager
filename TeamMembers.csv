@@ -1,0 +1,5 @@
+﻿Id,FirstName,SurName,Age,Gender,LinkedIn_link,Notes,Record_State_Id,Phone,Email
+1,Person 1,One,21,Male,https://no.link1,first note 1,1,0501234567,no1@mail
+2,Person 2,Two,22,Female,https://no.link2,second note 2,1,0502234567,no2@mail
+3,Person 3,Three,23,Male,https://no.link3,third note 3,0,0503234567,no3@mail
+4,Person 4,Four,24,Female,https://no.link4,fourth note 4,2,0504234567,no4@mail
