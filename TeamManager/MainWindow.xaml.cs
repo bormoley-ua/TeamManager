@@ -80,7 +80,7 @@ namespace TeamManager
 
             CultureInfo currLang = App.Language;
 
-            //Заполняем меню смены языка:
+            //filling the languages menu:
             menuLanguage.Items.Clear();
             foreach (var lang in App.Languages)
             {
@@ -98,7 +98,7 @@ namespace TeamManager
         {
             CultureInfo currLang = App.Language;
 
-            //Отмечаем нужный пункт смены языка как выбранный язык
+            //checking the active language menu Item
             foreach (MenuItem i in menuLanguage.Items)
             {
                 CultureInfo ci = i.Tag as CultureInfo;
@@ -154,7 +154,6 @@ namespace TeamManager
                 bLastRecord.IsEnabled = !(dgrMainData.SelectedIndex == dgrMainData.Items.Count - 1);
                 bNextRecord.IsEnabled = !(dgrMainData.SelectedIndex == dgrMainData.Items.Count - 1);
                 bEditSelectedUserData.IsEnabled = true;
-
             }
             else
             {
@@ -252,7 +251,7 @@ namespace TeamManager
         {
             CultureInfo currLang = App.Language;
 
-            //Отмечаем нужный пункт смены языка как выбранный язык
+            //checking the active language menu Item
             foreach (MenuItem i in menuLanguage.Items)
             {
                 CultureInfo ci = i.Tag as CultureInfo;

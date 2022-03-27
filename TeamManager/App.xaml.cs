@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Windows;
+using System.Windows.Controls;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Windows;
 
 namespace TeamManager
 {
@@ -25,7 +26,7 @@ namespace TeamManager
 		{
 			m_Languages.Clear();
 			m_Languages.Add(new CultureInfo("en-US")); //should be set ast project neutral culture, I have app exception after changing ths property therefore it was left (none)
-			m_Languages.Add(new CultureInfo("he-HE"));
+			m_Languages.Add(new CultureInfo("he-IL"));
 		}
 
 		//Event to notify all app windows of language change
@@ -49,8 +50,8 @@ namespace TeamManager
 				ResourceDictionary dict = new ResourceDictionary();
 				switch (value.Name)
 				{
-					case "he-HE":
-						dict.Source = new Uri(String.Format(System.AppDomain.CurrentDomain.BaseDirectory+"Resources/lang.{0}.xaml", value.Name), UriKind.Relative);
+					case "he-IL":
+						dict.Source = new Uri(String.Format("Resources/lang.{0}.xaml", value.Name), UriKind.Relative);
 						break;
 					default:
 						dict.Source = new Uri("Resources/lang.xaml", UriKind.Relative);
