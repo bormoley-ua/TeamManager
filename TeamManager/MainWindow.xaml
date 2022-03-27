@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeamManager"
         mc:Ignorable="d"
-        Title="Main Window" Height="450" Width="800" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" WindowState="Maximized" Closed="Window_Closed">
+        Title="{DynamicResource m_MainWindowTitle}" Height="450" Width="800" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" WindowState="Maximized" Closed="Window_Closed">
 
     <DockPanel x:Uid="pMainMenu" x:Name="pMainMenu" Grid.ColumnSpan="3">
         <Menu x:Uid="mMainMenu" x:Name="mMainMenu" DockPanel.Dock="Top">

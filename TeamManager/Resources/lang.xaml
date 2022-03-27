@@ -11,4 +11,5 @@
     <v:String x:Key="m_bDeleteSelectedUserData">_Delete...</v:String>
     <v:String x:Key="m_bNextRecord">Next _&gt;</v:String>
     <v:String x:Key="m_bLastRecord">_Last &gt;&gt;</v:String>
+    <v:String x:Key="m_MainWindowTitle">Main Window</v:String>
 </ResourceDictionary>
