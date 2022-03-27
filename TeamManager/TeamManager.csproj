@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
 	<UICulture>en-US</UICulture>
+	<StartupObject>TeamManager.App</StartupObject>
   </PropertyGroup>
 
 </Project>

@@ -66,7 +66,7 @@ namespace TeamManager
             return data.ToList();
         }
     }
-   /// <summary>
+    /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
@@ -76,7 +76,6 @@ namespace TeamManager
             InitializeComponent();
 
             DataContext = TeamMembersLoad.ReadFile(@"d:\TeamMembers.csv");
-
         }
 
         private void bFirstRecord_Click(object sender, RoutedEventArgs e)
@@ -104,16 +103,17 @@ namespace TeamManager
         private void dgrMainData_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //I bag my pardon, wpf data grid modifiers are different, did not find proper event to operate datasourcce changes in proper way, hare we have overdue 
-            if (dgrMainData.Items.Count > 0)
+            if (dgrMainData.Items.Count > 0 && dgrMainData.SelectedIndex >= 0)
             {
-                bEditSelectedUserData.IsEnabled = true;
                 bDeleteSelectedUserData.IsEnabled = true;
 
-                bFirstRecord.IsEnabled = !(dgrMainData.SelectedIndex == 1);
-                bPriorRecord.IsEnabled = !(dgrMainData.SelectedIndex == 1);
+                bFirstRecord.IsEnabled = !(dgrMainData.SelectedIndex == 0);
+                bPriorRecord.IsEnabled = !(dgrMainData.SelectedIndex == 0);
 
-                bLastRecord.IsEnabled = !(dgrMainData.SelectedIndex == dgrMainData.Items.Count);
-                bNextRecord.IsEnabled = !(dgrMainData.SelectedIndex == dgrMainData.Items.Count);
+                bLastRecord.IsEnabled = !(dgrMainData.SelectedIndex == dgrMainData.Items.Count - 1);
+                bNextRecord.IsEnabled = !(dgrMainData.SelectedIndex == dgrMainData.Items.Count - 1);
+                bEditSelectedUserData.IsEnabled = true;
+
             }
             else
             {
@@ -127,18 +127,58 @@ namespace TeamManager
         }
 
         private void bNewUserData_Click(object sender, RoutedEventArgs e)
-        { 
+        {
+            TeamMember TeamMemberOutput = new TeamMember();
             PersonViewWindow fPVW = new TeamManager.PersonViewWindow();
-            fPVW.ShowDialog();
+            fPVW.pId.Text = (dgrMainData.Items.Count + 1).ToString();
+            if (fPVW.ShowDialog() == DialogResult)
+            {
+                TeamMemberOutput.Id = int.Parse(fPVW.pId.Text);
+                TeamMemberOutput.FirstName = fPVW.pFirstName.Text;
+                TeamMemberOutput.SurName = fPVW.pSurname.Text;
+                TeamMemberOutput.Age = int.Parse(fPVW.pAge.Text);
+                TeamMemberOutput.Gender = (Gender)Enum.Parse(typeof(Gender), fPVW.pGender.Text);
+                TeamMemberOutput.LinkedIn_link = fPVW.pLinkedIn_link.Text;
+                TeamMemberOutput.Notes = fPVW.pNotes.Text;
+                TeamMemberOutput.Phone = fPVW.pPhone.Text;
+                TeamMemberOutput.Email = fPVW.pEmail.Text;
+
+                //InsertNewRow;
+            }
         }
 
         private void bEditSelectedUserData_Click(object sender, RoutedEventArgs e)
         {
-            //TeamMember currentTeamMemberData;
-            //currentTeamMemberData.Id =
-            MessageBox.Show(dgrMainData.SelectedItem.ToString());
+            TeamMember TeamMemberInput = (TeamMember)dgrMainData.SelectedItem;
+            TeamMember TeamMemberOutput = new TeamMember();
             PersonViewWindow fPVW = new TeamManager.PersonViewWindow();
-            fPVW.ShowDialog();
+            fPVW.pId.Text = TeamMemberInput.Id.ToString();
+            fPVW.pFirstName.Text = TeamMemberInput.FirstName.ToString();
+            fPVW.pSurname.Text = TeamMemberInput.SurName.ToString();
+            fPVW.pAge.Text = TeamMemberInput.Age.ToString();
+            fPVW.pGender.Text = TeamMemberInput.Gender.ToString();
+            fPVW.pLinkedIn_link.Text = TeamMemberInput.LinkedIn_link.ToString();
+            fPVW.pNotes.Text = TeamMemberInput.Notes.ToString();
+            fPVW.pPhone.Text = TeamMemberInput.Phone.ToString();
+            fPVW.pEmail.Text = TeamMemberInput.Email.ToString();
+            if (fPVW.ShowDialog() == DialogResult)
+            {
+                TeamMemberOutput.Id = int.Parse(fPVW.pId.Text);
+                TeamMemberOutput.FirstName = fPVW.pFirstName.Text;
+                TeamMemberOutput.SurName = fPVW.pSurname.Text;
+                TeamMemberOutput.Age = int.Parse(fPVW.pAge.Text);
+                TeamMemberOutput.Gender = (Gender)Enum.Parse(typeof(Gender), fPVW.pGender.Text);
+                TeamMemberOutput.LinkedIn_link = fPVW.pLinkedIn_link.Text;
+                TeamMemberOutput.Notes = fPVW.pNotes.Text;
+                TeamMemberOutput.Phone = fPVW.pPhone.Text;
+                TeamMemberOutput.Email = fPVW.pEmail.Text;
+
+                //check and update data;
+                if (TeamMemberInput != TeamMemberOutput)
+                {
+                    //update data
+                }
+            }
         }
 
         private void bDeleteSelectedUserData_Click(object sender, RoutedEventArgs e)
